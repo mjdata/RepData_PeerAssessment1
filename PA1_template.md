@@ -243,3 +243,4 @@ xyplot(steps ~ interval | weekde, data = ts_fill, type = "l", col = "blue", layo
 
 ![plot of chunk ts_wkdays](figure/ts_wkdays-1.png) 
 
+####As the above time series plot shows that there are differences in activity patterns between weekdays and weekends.  

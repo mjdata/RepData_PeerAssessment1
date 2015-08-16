@@ -203,3 +203,4 @@ ts_fill <- fill %>%
 xyplot(steps ~ interval | weekde, data = ts_fill, type = "l", col = "blue", layout = c(1, 2), main = "Time series of steps", xlab = "Time series (5-minute interval)")
 ```
 
+####As the above time series plot shows that there are differences in activity patterns between weekdays and weekends.  
