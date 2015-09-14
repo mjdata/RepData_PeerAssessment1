@@ -2,7 +2,7 @@
 title: "Reproducible Research: Peer Assessment 1"
 output: 
   html_document:
-    keep_md: TRUE
+    keep_md: true
 ---
 ```{r global_options, echo = TRUE}
 ```
@@ -13,10 +13,7 @@ library(data.table, quietly = TRUE)
 library(lattice, quietly = TRUE)
 ```  
 
-## Loading and preprocessing the data  
-  
- 
-###1. Loading the data  
+## Loading and preprocessing the data
 
 ```{r load_data}
 fpath <- "activity.csv"
@@ -40,8 +37,7 @@ df <- df %>%
         mutate(date = as.Date(date))
 ```  
 
-
-## What is mean total number of steps taken per day?  
+## What is mean total number of steps taken per day?
 
 Note: For this part of the assignment, you can ignore the missing values in the dataset.
 
@@ -69,10 +65,10 @@ median_daily <- median(daily$steps, na.rm = TRUE)
 ```  
 ####Answer: 
 ####The mean total number of daily steps is **`r as.integer(mean_daily)`**. The median of the total number of daily steps is **`r as.integer(median_daily)`**.  
-   
-   
+
+
 ## What is the average daily activity pattern?
-  
+
 ###1. Making a time series plot of the 5-minute interval and the average number of steps taken, averaged across all days.  
 
 ```{r ts_mean_steps}
@@ -99,8 +95,8 @@ interval_max <- ts$interval[max_ind]
   
 ####Answer: The 5-minute interval **`r interval_max`** contains the maximum number of steps, on average across all the days in the dataset.    
    
-   
-## Imputing missing values  
+
+## Imputing missing values
 
 ###1. Calculating and reporting the total number of missing values in the dataset (i.e. the total number of rows with NAs)  
 
@@ -176,10 +172,8 @@ hist(daily_fill$steps, ylim = c(0, 35), col = "blue", main = "Histogram of Daily
 abline(v = median_daily, lwd = 2, col = "wheat")
 ```   
    
-      
-   
-## Are there differences in activity patterns between weekdays and weekends?
 
+## Are there differences in activity patterns between weekdays and weekends?
 ###1. Creating a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.  
 
 ```{r df_wk}
@@ -204,3 +198,8 @@ xyplot(steps ~ interval | weekde, data = ts_fill, type = "l", col = "blue", layo
 ```
 
 ####As the above time series plot shows that there are differences in activity patterns between weekdays and weekends.  
+##SessionInfo
+```{r sessionInfo}
+sessionInfo()
+```
+
